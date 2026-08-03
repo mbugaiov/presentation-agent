@@ -1,0 +1,35 @@
+---
+description: Automated PR code review for the presentation-agent engine — policy for cursor-agent on GitHub PRs.
+alwaysApply: false
+---
+
+# Calliope engine — automated code review
+
+The GitHub PR workflow runs headless `cursor-agent` on every PR.
+
+## Scope
+
+- Diff vs base only. Engine files — not live `projects/<slug>/`.
+
+## Block on
+
+1. Live project data in git (except `projects/_template/` and `examples/`)
+2. Product/customer leaks in engine docs/skills (outside `examples/`)
+3. Secrets
+4. New CLI behavior without `tests/run_tests.sh` coverage
+5. Portability (`/Users/...`, live customer URLs in skills/rules)
+6. Forking a second visual system instead of `theme/calliope.css`
+7. Implementing product app code inside this engine
+
+## Isolation
+
+Job **`isolation (Themis)`** is separate. Fold obvious leaks into Blocking.
+
+## Output
+
+- `## Summary`
+- `## Blocking issues` — or `None.`
+- `## Suggestions` — or `None.`
+- `## High priority issues` — or `None.`
+
+End LGTM only when Blocking is clean.

@@ -21,5 +21,7 @@ grep -q 'kicker' examples/sample-pitch/dist/index.html && ok kicker_class || no 
 OUT=$(./scripts/calliope.sh sample-pitch shell)
 echo "$OUT" | grep -q CALLIOPE_PROJECT_DIR && ok shell || no shell
 
+bash scripts/check_review_gate_fixtures.sh && ok review_gate_fixtures || no review_gate_fixtures
+
 echo "== done pass=$PASS fail=$FAIL =="
 [[ "$FAIL" -eq 0 ]]

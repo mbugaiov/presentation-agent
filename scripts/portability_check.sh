@@ -3,7 +3,7 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 FORBIDDEN='(\blrm\b|sol-ark|solark|qa_lab_resource_management|/Users/max/Downloads|920b59c1|1258487975|712020:ec4910fd|RQ-1579|Fidelity|Sombrainc)'
-PATHS=(.cursor templates tests AGENTS.md PORTABILITY.md SETUP.md README.md docs scripts theme)
+PATHS=(.cursor templates tests AGENTS.md PORTABILITY.md SETUP.md README.md ENGINE-REVIEW.md docs scripts theme)
 # theme/calliope.css is large product-agnostic — still scan for leaks
 FAIL=0
 while IFS= read -r f; do

@@ -18,7 +18,7 @@
 | Outline / acts from a brief | `calliope-outline` | (agent) + `deck.yaml` |
 | Assemble HTML in Calliope theme | `calliope-build` | `calliope.sh <slug> build` |
 | Serve / PDF / standalone bundle | `calliope-build` | `serve` · `pdf` · `bundle` |
-| Engine PR review | `calliope-code-review` | CI / Themis |
+| Engine PR review | `calliope-code-review` | `code-review.yml` + Themis isolation + review gate |
 
 ## Modes
 

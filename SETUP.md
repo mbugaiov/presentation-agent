@@ -25,8 +25,8 @@
 ./scripts/calliope.sh <slug> bundle
 ```
 
-## Canonical style
+## Isolation
 
-`theme/calliope.css` is the source of truth — extracted from the house reveal.js system
-(dark radial bg, `--accent: #2f9fe5`, Inter, cards/chips/kickers). Compose builds always
-link this file. Hand decks should stay visually aligned when edited.
+Never commit `projects/<slug>/` live data. Engine PRs go through **review (Themis)** +
+**isolation (Themis)** like sibling engines. Configure repo secret `CURSOR_API_KEY` for
+automated Cursor review on PRs.
