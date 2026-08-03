@@ -1,0 +1,8 @@
+title: "Deck title"
+brand: "CALLIOPE"
+footer: "Calliope · Decks"
+slides:
+  - file: slides/01-title.html
+  - file: slides/02-agenda.html
+  - file: slides/03-content.html
+  - file: slides/04-close.html

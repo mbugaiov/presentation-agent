@@ -1,0 +1,11 @@
+---
+description: Calliope presentation engine — always use house theme
+alwaysApply: true
+---
+
+# Calliope engine
+
+- Decks ship through `./scripts/calliope.sh <slug> …`.
+- Visual system = `theme/calliope.css` only.
+- Prefer compose mode for new decks; hand mode for large existing narratives.
+- Skills: `calliope-loop`, `calliope-outline`, `calliope-build`.

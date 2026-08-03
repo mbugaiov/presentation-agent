@@ -1,0 +1,5 @@
+slug: <slug>
+name: <Project Name>
+mode: <mode>
+# hand mode only — optional path to folder containing index.html (relative to this file or absolute)
+# root_dir: .
