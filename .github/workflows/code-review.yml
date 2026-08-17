@@ -68,7 +68,11 @@ jobs:
             --local-rule .cursor/rules/code-review.mdc \
             --agents AGENTS.md \
             --themis-root .themis-agent)"
-          cursor-agent --force --api-key "$CURSOR_API_KEY" --output-format text -p "$PROMPT" > review.md || true
+          REVIEW_BIN=cursor-agent
+          command -v cursor-agent >/dev/null 2>&1 || REVIEW_BIN=agent
+          export PATH="$HOME/.cursor/bin:$HOME/.local/bin:$PATH"
+          command -v "$REVIEW_BIN" >/dev/null 2>&1 || { echo "Cursor agent binary missing" >&2; exit 127; }
+          "$REVIEW_BIN" --force --api-key "$CURSOR_API_KEY" --output-format text -p "$PROMPT" > review.md || true
           [[ -s review.md ]] || echo "Cursor review produced no output (see build log above)." > review.md
           cat review.md
 
