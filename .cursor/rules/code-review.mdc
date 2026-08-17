@@ -13,10 +13,17 @@ The GitHub PR workflow runs headless `cursor-agent` on every PR.
 
 ## Block on
 
+## MUST-HAVE — tests (Themis shared)
+
+Behavior change (scripts/libs/skills/workflows/CLI/gates) without **new or updated**
+tests → **Blocking**. Align with `themis-agent/review-rules/ (via build_review_prompt.sh)`
+(CI also loads `.themis-agent/review-rules/ (via build_review_prompt.sh)`).
+
+
 1. Live project data in git (except `projects/_template/` and `examples/`)
 2. Product/customer leaks in engine docs/skills (outside `examples/`)
 3. Secrets
-4. New CLI behavior without `tests/run_tests.sh` coverage
+4. **Missing or stale tests (MUST-HAVE)** — new/changed CLI behavior without **new or updated** coverage in `tests/run_tests.sh` / vitest (file-exists/`grep` smoke alone is not enough)
 5. Portability (`/Users/...`, live customer URLs in skills/rules)
 6. Forking a second visual system instead of `theme/calliope.css`
 7. Implementing product app code inside this engine
