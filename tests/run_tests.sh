@@ -32,7 +32,7 @@ grep -q build_review_prompt.sh "$WF"
 grep -q 'repository: mbugaiov/themis-agent' "$WF"
 if [[ -f scripts/ensure_themis_agent.sh ]]; then
   PIN=$(grep -Eo '[0-9a-f]{40}' scripts/ensure_themis_agent.sh | head -1 || true)
-  [[ -z "${PIN:-}" ]] || grep -q "$PIN" "$WF"
+  [[ -z "${PIN:-}" ]] || grep -q "$PIN" .github/workflows/auto-merge.yml 2>/dev/null || grep -q "$PIN" "$WF"
 fi
 THEMIS_TMP=$(mktemp -d)
 git clone --depth 1 https://github.com/mbugaiov/themis-agent.git "$THEMIS_TMP/themis" >/dev/null 2>&1
